@@ -1,4 +1,16 @@
+<div align="center">
+
+<img src="docs/ekkos-logo.png" alt="ekkOS_" width="120" />
+
 # ekkOS Open
+
+**Persistent memory for AI coding assistants**
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Node](https://img.shields.io/badge/Node.js-18+-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![MCP](https://img.shields.io/badge/MCP-Compatible-000000)](https://modelcontextprotocol.io)
+
+</div>
 
 > This repository contains the local and inspectable parts of ekkOS: client integrations, SDKs, and redaction logic. Hosted memory infrastructure, collective intelligence, and team platform services remain proprietary.
 
