@@ -74,13 +74,16 @@ ekkOS offers an opt-in collective intelligence feature where anonymized patterns
 
 1. **You forge a pattern** -- your AI learns something useful and creates a pattern
 2. **Redaction pipeline runs** -- the `packages/redaction` module strips:
-   - Personally identifiable information (names, emails, usernames)
-   - File paths and directory structures
-   - API keys, tokens, and credentials
-   - Company-specific identifiers
-   - Repository names and URLs
-3. **Anonymized pattern enters collective pool** -- only the generic technical insight remains
+   - Email addresses
+   - IPv4 addresses
+   - User home paths (`/Users/name`, `/home/name`, `C:\Users\name`)
+   - API keys and tokens (`sk-`, `ghp_`, `ekk_`, Stripe, Slack, AWS)
+   - Bearer tokens
+   - URLs with embedded credentials
+3. **Anonymized pattern enters collective pool** -- the technical insight remains, with identifiers replaced by placeholders like `[email]`, `[ip]`, `[api-key]`
 4. **Other users benefit** -- when someone searches for a similar problem, they may find your anonymized solution
+
+**What is NOT stripped:** project names, company names, architectural descriptions, code logic, and technical approaches are preserved. The redaction pipeline removes identifiers, not ideas. See the [known limitations](../packages/redaction/README.md#known-limitations) for the full list.
 
 You can verify exactly what the redaction pipeline strips by reading the source code in [`packages/redaction`](../packages/redaction).
 
@@ -90,12 +93,10 @@ Collective memory sharing is opt-in. You can disable it entirely in your ekkOS d
 
 ## Verify for yourself
 
-Every component that touches your data is in this repository:
+The components that govern what data leaves your machine are in this repository:
 
-- **[`packages/mcp-server`](../packages/mcp-server)** -- see exactly what API calls are made
-- **[`packages/redaction`](../packages/redaction)** -- see exactly what gets stripped before collective sharing
-- **[`packages/memory-sdk`](../packages/memory-sdk)** -- see the SDK methods and what data they transmit
-- **[`schemas/`](../schemas)** -- see the exact JSON schemas for every tool input and output
+- **[`packages/mcp-server`](../packages/mcp-server)** -- the local bridge between your IDE and the ekkOS API
+- **[`packages/redaction`](../packages/redaction)** -- the PII stripping pipeline, with 47 tests and 12 documented known limitations
 
 We encourage you to audit this code. If you find a case where data is transmitted that shouldn't be, please report it immediately.
 
