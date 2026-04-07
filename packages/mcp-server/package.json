@@ -1,0 +1,39 @@
+{
+  "name": "@ekkos/mcp-server",
+  "version": "2.1.0",
+  "description": "MCP server bridge for ekkOS — persistent memory for AI coding assistants. Connects Claude Code, Cursor, and other MCP-compatible tools to your ekkOS memory.",
+  "type": "module",
+  "bin": {
+    "ekkos-mcp-server": "bin/forward.mjs",
+    "ekkos-mcp": "bin/forward.mjs"
+  },
+  "scripts": {
+    "build": "node -e \"process.exit(0)\"",
+    "prepublishOnly": "node -e \"process.exit(0)\""
+  },
+  "keywords": [
+    "ekkos",
+    "mcp",
+    "memory",
+    "ai",
+    "claude",
+    "anthropic",
+    "model-context-protocol"
+  ],
+  "author": "ekkOS Technologies Inc.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekkos-technologies/ekkos-open",
+    "directory": "packages/mcp-server"
+  },
+  "dependencies": {
+    "@ekkos/cli": "latest"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "bin"
+  ]
+}
