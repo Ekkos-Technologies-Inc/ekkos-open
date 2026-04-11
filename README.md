@@ -25,7 +25,7 @@
 brew install ekkos-technologies-inc/ekkos/ekkos
 
 # macOS / Linux
-curl -fsSL https://ekkos.dev/i | bash
+curl -fsSL https://ekkos.dev/sh | bash
 
 # Windows (PowerShell)
 irm https://ekkos.dev/i | iex
@@ -43,7 +43,7 @@ Security-conscious? Audit the scripts first:
 
 ```bash
 # macOS/Linux — view, then run
-curl https://ekkos.dev/i | less
+curl https://ekkos.dev/sh | less
 
 # Windows — view first
 irm https://ekkos.dev/i
@@ -59,7 +59,7 @@ Source: [install.sh](scripts/install/install.sh) · [install.ps1](scripts/instal
 
 | Path | Description |
 |------|-------------|
-| [`scripts/install/`](./scripts/install) | Install scripts served by `ekkos.dev/i` — fully auditable |
+| [`scripts/install/`](./scripts/install) | Install scripts (`ekkos.dev/sh` for Unix, `ekkos.dev/i` for Windows) — fully auditable |
 | [`packages/mcp-server/`](./packages/mcp-server) | MCP server connecting your IDE to ekkOS (stdio + SSE) |
 | [`packages/redaction/`](./packages/redaction) | PII redaction pipeline — every pattern passes through this |
 | [`docs/SECURITY.md`](./docs/SECURITY.md) | What data leaves your machine and how it's anonymized |
